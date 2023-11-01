@@ -9,9 +9,14 @@ OUTPUT_ROOT_DIR="./decrypted_scripts"
 # Create the output root directory if it doesn't exist
 mkdir -p "$OUTPUT_ROOT_DIR"
 
+
 # Define color codes
 GREEN="\033[32m"
 RED="\033[31m"
+BLUE="\033[34m"
+YELLOW="\033[33m"
+MAGENTA="\033[35m"
+CYAN="\033[36m"
 RESET="\033[0m"
 
 # Function to execute a script and display the results
@@ -24,9 +29,9 @@ execute_script() {
   mkdir -p "$OUTPUT_DIR"
 
   # Download the encrypted script and version
-  echo -e "Downloading ${key}_script.sh.enc..."
+  echo -e "${BLUE}Downloading ${key}_script.sh.enc... ${RESET}"
   wget -q --show-progress -O "$OUTPUT_DIR/${key}_script.sh.enc" "${REPO_URL}${key}/script.sh.enc"
-  echo -e "Downloading ${key}_version.json.enc..."
+  echo -e "${BLUE}Downloading ${key}_version.json.enc... ${RESET}"
   wget -q --show-progress -O "$OUTPUT_DIR/${key}_version.json.enc" "${REPO_URL}${key}/version.json.enc"
 
   # Decrypt the script using OpenSSL
@@ -53,8 +58,8 @@ execute_script() {
   # Check if the extracted version and key match the expected values
   if [ "$version" == "$expected_version" ] && [ "$decryption_key" == "$key" ]; then
     echo -e "${GREEN}Script ${key} is correct.${RESET}"
-    echo -e "${GREEN}Version: $version${RESET}"
-    echo -e "${GREEN}Decryption Key: $decryption_key${RESET}"
+    echo -e "${CYAN}Output of script ${key} is:"
+    echo -e "${RESET}$script_output"
     echo "--------------------------------------"
   else
     echo -e "${RED}Script ${key} has incorrect version or key.${RESET}"
