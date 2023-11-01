@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Message Version
-VERSION="1.0"
+VERSION="1.0.10"
 
 # Decryption Key
 DECRYPTION_KEY="key10"

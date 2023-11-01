@@ -41,10 +41,15 @@ rl.question('How many scripts do you want to create? ', (numScripts) => {
             fs.mkdirSync(keyDir);
         }
 
+        // Create a version.json file for this key
+        const ver = version + `.${i}`;
+        const versionJson = `{"version": "${ver}"}`;
+        fs.writeFileSync(path.join(keyDir, 'version.json'), versionJson, 'utf-8');
+
         // Create the shell script for this key
         const shellScript = `#!/bin/bash\n\n` +
             `# Message Version\n` +
-            `VERSION="1.0"\n\n` +
+            `VERSION="${ver}"\n\n` +
             `# Decryption Key\n` +
             `DECRYPTION_KEY="${key}"\n\n` +
             `# Echo Version and Key\n` +
@@ -59,10 +64,7 @@ rl.question('How many scripts do you want to create? ', (numScripts) => {
 
 
 
-        // Create a version.json file for this key
-        const ver = version + `.${i}`;
-        const versionJson = `{"version": "${ver}"}`;
-        fs.writeFileSync(path.join(keyDir, 'version.json'), versionJson, 'utf-8');
+
 
         // Encrypt the version.json file with the same key as the script using OpenSSL
         const versionOpensslCommand = `echo '${versionJson}' | openssl enc -aes-256-cbc -out "${path.join(keyDir, 'version.json.enc')}" -pass pass:${secret.toString('hex')}`;
