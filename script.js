@@ -59,7 +59,7 @@ rl.question('How many scripts do you want to create? ', (numScripts) => {
         fs.writeFileSync(path.join(keyDir, 'script.sh'), shellScript, 'utf-8');
 
         // Use openssl to encrypt the shell script
-        const opensslCommand = `openssl enc -aes-256-cbc -in "${path.join(keyDir, 'script.sh')}" -out "${path.join(keyDir, 'script.sh.enc')}" -pass pass:${secret.toString('hex')}`;
+        const opensslCommand = `openssl enc -aes-256-cbc -pbkdf2 -in "${path.join(keyDir, 'script.sh')}" -out "${path.join(keyDir, 'script.sh.enc')}" -pass pass:${secret.toString('hex')}`;
         const result = childProcess.execSync(opensslCommand);
 
 
@@ -67,7 +67,7 @@ rl.question('How many scripts do you want to create? ', (numScripts) => {
 
 
         // Encrypt the version.json file with the same key as the script using OpenSSL
-        const versionOpensslCommand = `echo '${versionJson}' | openssl enc -aes-256-cbc -out "${path.join(keyDir, 'version.json.enc')}" -pass pass:${secret.toString('hex')}`;
+        const versionOpensslCommand = `echo '${versionJson}' | openssl enc -aes-256-cbc -pbkdf2 -out "${path.join(keyDir, 'version.json.enc')}" -pass pass:${secret.toString('hex')}`;
         const versionResult = childProcess.execSync(versionOpensslCommand);
 
         // Store the secret key in keyJson
