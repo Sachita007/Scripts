@@ -1,28 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <title>Dynamic Iframe with Query Params</title>
-<!--   <script src="https://strysample.freestand.in/api/script.js" ></script> -->
-  <!-- <script> document.addEventListener("DOMContentLoaded", function () {
-    const iframe = document.getElementById("freestand-integration");
-    if (!iframe) return;
-
-    const originalSrc = iframe.getAttribute("src");
-    const url = new URL(originalSrc, window.location.origin);
-    url.searchParams.set("referer", document.referrer);
-    url.searchParams.set("sourceUrl", window.location.href);
-    iframe.src = url.toString();
-}); </script> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      padding: 0 20px;
+    }
+    header, footer {
+      background: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      margin: 40px 0;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    p {
+      max-width: 800px;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Welcome to Our Landing Page</h1>
+    <p>Scroll down to explore more content</p>
+  </header>
+
+  <section>
+    <h2>About Us</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel nisi et velit feugiat tempor. Morbi volutpat nunc in sapien porttitor, sed egestas diam porta. Integer bibendum eros a nulla volutpat, a posuere quam sollicitudin.</p>
+    <p>Suspendisse fermentum, turpis at cursus convallis, augue lorem efficitur arcu, a pharetra nulla sapien ac est. Etiam eget tincidunt justo. Duis scelerisque felis ut velit ullamcorper cursus. Cras condimentum, leo in laoreet gravida, arcu metus pretium sem, at efficitur diam sapien at massa.</p>
+  </section>
+
+  <section>
+    <h2>Our Services</h2>
+    <p>We provide top-notch services to our customers. Our offerings include:</p>
+    <ul>
+      <li>Web Development</li>
+      <li>Mobile Applications</li>
+      <li>Cloud Solutions</li>
+      <li>DevOps & Automation</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lacinia nulla at ipsum feugiat, in blandit diam blandit. Donec imperdiet gravida tortor nec volutpat.</p>
+  </section>
+
+  <section>
+    <h2>Testimonials</h2>
+    <p>"This company is amazing! Their service quality is top-tier." – Jane Doe</p>
+    <p>"I've never seen such professional work. Truly recommended!" – John Smith</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet, turpis nec tempor faucibus, velit justo dignissim urna, at gravida ex neque vel justo.</p>
+  </section>
+
+  <section>
+    <h2>Blog</h2>
+    <p>Check out our latest blog articles:</p>
+    <p><strong>Post 1:</strong> The Future of Tech — Lorem ipsum dolor sit amet...</p>
+    <p><strong>Post 2:</strong> 5 Productivity Tips for Developers — Lorem ipsum dolor sit amet...</p>
+    <p><strong>Post 3:</strong> Building Scalable Applications — Lorem ipsum dolor sit amet...</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus feugiat diam vitae purus finibus, nec tincidunt augue facilisis. Vivamus ut ligula nec urna finibus convallis. Aenean dictum metus id lacinia iaculis.</p>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>If you'd like to get in touch, feel free to email us at contact@example.com</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a nunc sed dolor pretium convallis nec vel mauris. Integer a neque vitae magna faucibus imperdiet.</p>
+  </section>
+<iframe id="freestand-integration" src="http://localhost:3002/interactions/2af7ff57-dc92-4d1e-b53f-0233aab613df" height="600" width="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe> <script defer src="http://localhost:3002/api/script.js" ></script>
+  <footer>
+    <p>&copy; 2025 Simple Landing Page. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+<body>
   <h2>Iframe Embed with Dynamic Params (src from iframe tag)</h2>
+  
 
   <!-- Iframe with base src -->
 <!--   test -->
 <!--   <iframe id="freestand-integration" src="https://strysample.freestand.in/interactions/68de4aea-2652-4799-9570-28cd1ff434dc" height="600" width="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe> 
   <script src="https://strysample.freestand.in/api/script.js" ></script> -->
-<iframe id="freestand-integration" src="http://localhost:3002/interactions/2af7ff57-dc92-4d1e-b53f-0233aab613df" height="600" width="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe> <script defer src="https://trysample.freestand.in/api/script.js" ></script>
+
 
   
 <!--   // <iframe id="freestand-integration" src="https://strysample.freestand.in/interactions/68de4aea-2652-4799-9570-28cd1ff434dc" height="600" width="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe> <script defer src="https://strysample.freestand.in/api/script.js" ><script> -->
